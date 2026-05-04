@@ -1,0 +1,32 @@
+data:
+  source: synthetic   # options: synthetic | csv | sql | api
+  # csv:
+  #   path: data/raw/dataset.csv
+  # sql:
+  #   connection_string: "postgresql://user:pass@host/db"
+  #   query: "SELECT * FROM features WHERE date >= '2024-01-01'"
+  # api:
+  #   url: https://api.example.com/data
+  #   params:
+  #     start_date: "2024-01-01"
+
+training:
+  experiment_name: ml_pipeline_v1
+  model_type: random_forest      # random_forest | gradient_boosting | svm | logistic
+  target_col: target
+  test_size: 0.2
+  cv_folds: 5
+  random_seed: 42
+  model_params:
+    n_estimators: 200
+    max_depth: 15
+
+serving:
+  model_path: models/ml_pipeline_v1_best.pkl
+  port: 8000
+
+azure:
+  resource_group: ml-pipeline-rg
+  app_service_name: ml-pipeline-api
+  acr_name: mlpipelineacr
+  region: westeurope
