@@ -203,6 +203,6 @@ class ModelTrainer:
         logger.info(
             f"Run {run_id} | F1={metrics['f1_macro']:.4f} "
             f"CV={metrics['cv_f1_mean']:.4f}±{metrics['cv_f1_std']:.4f} "
-            f"({metrics['duration_s']:.1f}s)"
+            f"({time.time() - t0:.1f}s)"
         )
         return result
