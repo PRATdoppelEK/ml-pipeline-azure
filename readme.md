@@ -174,11 +174,11 @@ All runs are logged to `experiments/runs.jsonl` with:
 
 ### Training pipeline output
 
-![Training output](assets/screenshots/training_output.png)
+![Training output](screenshots/training_output.png)
 
 ### FastAPI prediction endpoint
 
-![FastAPI docs](assets/screenshots/fastapi_docs.png)
+![FastAPI docs](screenshots/fastapi_docs.png)
 
 ## 🔧 Tech Stack
 
