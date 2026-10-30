@@ -154,16 +154,18 @@ All runs are logged to `experiments/runs.jsonl` with:
 ---
 ## 📊 Pipeline Performance & Results
 
-### Model benchmark (synthetic classification dataset, 10k samples, 20 features)
+### Model benchmark (synthetic classification dataset, 5k samples, 20 features)
 
-| Model | F1 Macro | ROC-AUC | Training Time | Notes |
-|-------|----------|---------|---------------|-------|
-| **Gradient Boosting** | **0.91** | **0.96** | 12s | Best overall |
-| Random Forest | 0.88 | 0.94 | 4s | Best speed/accuracy ratio |
-| SVM (RBF) | 0.84 | 0.91 | 28s | Slower on larger datasets |
-| Logistic Regression | 0.79 | 0.87 | < 1s | Useful baseline |
+| Model | Test F1 Macro | 5-fold CV F1 | Training Time |
+|-------|---------------|--------------|---------------|
+| **SVM (RBF)** | **0.961** | 0.954 ± 0.009 | 8s |
+| Random Forest | 0.949 | 0.946 ± 0.006 | 12s |
+| Gradient Boosting | 0.880 | 0.868 ± 0.013 | 84s (with the config's 200 trees, depth 15) |
+| Logistic Regression | 0.846 | 0.839 ± 0.009 | 2s |
 
-*5-fold cross-validation. Results logged automatically to `experiments/runs.jsonl`.*
+*80/20 stratified split + 5-fold CV on the training part; runs logged to `experiments/runs.jsonl`.
+Fixed in Oct 2026: the feature engineer used to scale the target column too, creating a
+`target_scaled` input that leaked the label (F1 = 1.000).*
 
 ### Pipeline reliability observations
 
