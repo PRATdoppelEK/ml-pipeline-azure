@@ -1,6 +1,10 @@
 # End-to-End ML Pipeline with Azure Deployment
 
-> Production-ready, reproducible ML pipeline with automated data ingestion (REST API, SQL, CSV), feature engineering, model training with experiment tracking, FastAPI serving, and CI/CD deployment to Microsoft Azure App Service via GitHub Actions.
+> Reproducible ML pipeline with automated data ingestion (REST API, SQL, CSV), feature engineering, model training with experiment tracking, FastAPI serving, and CI/CD deployment to Microsoft Azure App Service via GitHub Actions.
+
+---
+
+> **📌 About this repo:** This is a showcase repo — write-up, architecture, and results only. The full implementation lives in a private core repo (kept private to protect the code and as a backup) and is available for a live walkthrough on request, e.g. in an interview.
 
 ---
 
